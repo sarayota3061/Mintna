@@ -1,0 +1,602 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="icon" type="image/x-icon" href="logo.JPG ">
+<title>Background Image Example</title>
+<link rel="stylesheet" href="styles.css">
+
+<div class="frame">
+<button class="custom-btn btn-8" onclick="window.location.href='project.html'"><span>เสียง</span></button>
+<button class="custom-btn btn-8" onclick="window.location.href='index1.html'"><span>หน้าหลัก</span></button>
+<p style="font-family: Andale Mono, monospace;"></p>
+</div>
+
+<style>
+.frame {
+  width: 100%;
+  margin: 30px auto;
+  text-align: left;
+}
+button {
+  margin: 5px;
+}
+.custom-btn {
+  width: 130px;
+  height: 40px;
+  color: #fff;
+  border-radius: 5px;
+  padding: 10px 25px;
+  font-family: 'Lato', sans-serif;
+  font-weight: 500;
+  background: transparent;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  display: inline-block;
+   box-shadow:inset 2px 2px 2px 0px rgba(255,255,255,.5),
+   7px 7px 20px 0px rgba(0,0,0,.1),
+   4px 4px 5px 0px rgba(0,0,0,.1);
+  outline: none;
+}
+.btn-8 {
+  background-color: #f0ecfc;
+background-image: linear-gradient(315deg, #f0ecfc 0%, #c797eb 74%);
+  line-height: 42px;
+  padding: 0;
+  border: none;
+}
+.btn-8 span {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+.btn-8:before,
+.btn-8:after {
+  position: absolute;
+  content: "";
+  right: 0;
+  bottom: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8:before{
+   height: 0%;
+   width: 2px;
+}
+.btn-8:after {
+  width: 0%;
+  height: 2px;
+}
+.btn-8:hover:before {
+  height: 100%;
+}
+.btn-8:hover:after {
+  width: 100%;
+}
+.btn-8:hover{
+  background: transparent;
+}
+.btn-8 span:hover{
+  color: #c797eb;
+}
+.btn-8 span:before,
+.btn-8 span:after {
+  position: absolute;
+  content: "";
+  left: 0;
+  top: 0;
+  background: #c797eb;
+  /*box-shadow:  4px 4px 6px 0 rgba(255,255,255,.5),
+              -4px -4px 6px 0 rgba(116, 125, 136, .2), 
+    inset -4px -4px 6px 0 rgba(255,255,255,.5),
+    inset 4px 4px 6px 0 rgba(116, 125, 136, .3);*/
+  transition: all 0.3s ease;
+}
+.btn-8 span:before {
+  width: 2px;
+  height: 0%;
+}
+.btn-8 span:after {
+  height: 2px;
+  width: 0%;
+}
+.btn-8 span:hover:before {
+  height: 100%;
+}
+.btn-8 span:hover:after {
+  width: 100%;
+}
+</style>
+
+</head>
+
+
+<body>
+    <h3 data-text="บริษัท">บริษัท</h3>
+    <h3 data-text="Earth">Earth</h3>
+    <h3 data-text="Sound Record">Sound Record</h3>
+
+  </body>
+  <style>
+
+.bold-line {
+            border: 0;
+            height: 2px; /* ความสูงของเส้นขีด */
+            background-color: #000; /* สีของเส้นขีด */
+            margin: 20px 0; /* ระยะห่างของเส้นขีด */
+        }
+
+
+        /* เพิ่มสไตล์ CSS ตามต้องการ */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+        .header {
+            background-color: #000000;
+            color: #fff;
+            padding: 30px 700px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .header h1 {
+            margin: 0;
+        }
+        .header a {
+            color: #fff;
+            text-decoration: none;
+            padding: 5px 10px;
+            border: 1px solid #fff;
+            border-radius: 5px;
+        }
+        .header a:hover {
+            background-color: #fff;
+            color: #333;
+        }
+        /* เพิ่มสไตล์ CSS เมื่อต้องการ */
+
+
+
+        
+
+
+
+    * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  height: 100vh;
+  width: 100%;
+  display: grid;
+  place-items: center;
+}
+h3 {
+  position: relative;
+  font-family: "Poppins", sans-serif;
+  color: #ffffff;
+  font-size: 150px;
+}
+h3:hover {
+  text-shadow: 0.05em 0 0 #ec2225, -0.025em -0.05em 0 #313f97,
+    0.025em 0.05em 0 #50c878;
+    color: rgba(0, 194, 203, 0.2);
+}
+h3:before,
+h3:after {
+  content: attr(data-text);
+  position: absolute;
+  top: 0;
+  left: 0;
+  opacity: 0.8;
+}
+h3:hover::before {
+  animation: glitch 650ms infinite;
+  clip-path: polygon(0 0, 100% 0, 100% 45%, 0 45%);
+  transform: translate(-0.025em, -0.0125em);
+}
+h3:hover::after {
+  animation: glitch 375ms infinite;
+  clip-path: polygon(0 65%, 100% 20%, 100% 100%, 0 70%);
+  transform: translate(0.0125em, 0.025em);
+}
+@keyframes glitch {
+  0% {
+    color: rgba(51, 34, 236, 0.2);
+    text-shadow: 0.05em 0 0 #f95300, -0.025em -0.05em 0 #313f97,
+      0.025em 0.05em 0 #50c878;
+  }
+  14% {
+    text-shadow: 0.05em 0 0 #f95300, -0.025em -0.05em 0 #313f97,
+      0.025em 0.05em 0 #50c878;
+  }
+  15% {
+    color: #e4f439;
+    text-shadow: -0.05em -0.025em 0 #f95300, 0.025em -0.025em 0 #313f97,
+      -0.05em -0.05em 0 #50c878;
+  }
+  49% {
+    text-shadow: -0.05em -0.025em 0 #f95300, 0.025em -0.025em 0 #313f97,
+      -0.05em -0.05em 0 #50c878;
+  }
+  50% {
+    text-shadow: 0.025em 0.05em 0 #f95300, -0.025em 0.05em 0 #313f97,
+      0 -0.05em 0 #50c878;
+  }
+  99% {
+    color: #3ff1cd;
+    text-shadow: 0.025em 0.05em 0 #f95300, -0.025em 0.05em 0 #313f97,
+      0 -0.05em 0 #50c878;
+  }
+  100% {
+    text-shadow: -0.025em 0 0 #f95300, -0.025em -0.025em 0 #313f97,
+      -0.025em -0.05em 0 #50c878;
+  }
+}
+  </style>
+
+
+
+
+
+
+
+
+<body>
+<ul class="tabs">
+    <li class="active" data-id="0">ผู้ก่อตั้งบริษัท (CEO)</li>
+    <li data-id="1">หัวหน้าทีม</li>
+    <li data-id="2">ผู้ช่วย</li>
+    <li data-id="3">เลขา (ฝ่ายบัญชี)</li>
+    <li data-id="4">ผู้ดูแลเว็บไซต์</li>
+    <li data-id="5">นโยบายบริษัท</li>
+</ul>
+
+<div class="contents">
+
+    <div class="box show" data-content="0">
+        <img src="Fi.jpeg" alt="">
+        <div>
+            <h2>นายชินดนัย  แก้วมรกฎ</h2>
+            <p>"สโลแกนแนวทางการใช้ชีวิต"</p>
+            <h6>อยากฝืนตัวเองกับรักที่เป็นไปไม่ได้ เพราะสุดท้ายคนที่เสียใจมีแค่เรา</h6>
+            <br></br>
+            <p>"เพลงที่ชอบ"</p>
+            <h6>sunflower</h6>
+            <br></br>
+            <p>"อาหารที่ชอบ"</p>
+            <h6> สเต๊กเนื้อวากิววาซาบิ (Wagyu Beef Steak & Wasabi)</h6>
+        </div>
+    </div>
+
+    <div class="box hide" data-content="1">
+        <img src="Ki.jpg" alt="">
+        <div>
+            <h2>นายศรายุทธ  โยธานุกูล</h2>
+            <p>"สโลแกนแนวทางการใช้ชีวิต"</p>
+            <h6>E=MCกำลัง2 คือ E= พลังงาน
+              m= นม
+              c= กาแฟ
+              2= 2แก้ว</h6>
+              <br></br>
+              <p>"เพลงที่ชอบ"</p>
+              <h6>ขีดเล้นใต้</h6>
+              <br></br>
+              <p>"อาหารที่ชอบ"</p>
+              <h6>ทาร์ทาร์เนื้อวากิว เสิร์ฟพร้อมคาเวียร์ (Wagyu Beef Tartare)</h6>
+        </div>
+    </div>
+
+    <div class="box hide" data-content="2">
+        <img src="Ti.jpeg" alt="">
+        <div>
+            <h2>นายวีรภัทร  พรหมวันรัตน์</h2>
+            <p>"สโลแกนแนวทางการใช้ชีวิต"</p>
+            <h6>คุณย่าเคยพูดเอาไว้มีสองสิ่งที่ลูกผู้ชายไม่ควรทำ คือ ทำให้ผู้หญิงต้องร้องไห้ และ ทิ้งขว้างของกินอย่างไร้มารยาท</h6>
+            <br></br>
+            <p>"เพลงที่ชอบ"</p>
+            <h6>ไก๊ไก่ไกมุ</h6>
+            <br></br>
+            <p>"อาหารที่ชอบ"</p>
+            <h6>ซุปกุ้งโฟมเบคอน (Chicory Soup)</h6>
+        </div>
+    </div>
+
+    <div class="box hide" data-content="3">
+        <img src="Ni.jpg" alt="">
+        <div>
+            <h2>นายชัยมงคล  ลิมปพยอม</h2>
+            <p>"สโลแกนแนวทางการใช้ชีวิต"</p>
+            <h6>ความรักนั้นเป็นสิ่งที่ไม่ “แน่นอน” แต่ความง่วงนอนนั้นเป็นสิ่งที่ต้อง “นอนแน่”</h6>
+            <br></br>
+            <p>"เพลงที่ชอบ"</p>
+            <h6>silent love Listen</h6>
+            <br></br>
+            <p>"อาหารที่ชอบ"</p>
+            <h6>สเต็กปลาคอต เสิร์ฟพร้อมชีสบูราตา (Black Cod Steak)</h6>
+        </div>
+    </div>
+    
+    <div class="box hide" data-content="4">
+        <img src="Mi.jpg" alt="">
+        <div>
+            <h2>นางสาวคุณัญญา  คาบแก้ว</h2>
+            <p>"สโลแกนแนวทางการใช้ชีวิต"</p>
+            <h6>หิวอะไรก็ไม่รู้ เหมือนว่าจะเป็นหมูกระทะ</h6>
+            <br></br>
+            <p>"เพลงที่ชอบ"</p>
+            <h6>หนีห่าง</h6>
+            <br></br>
+            <p>"อาหารที่ชอบ"</p>
+            <h6>ขนมทาร์ตมะนาว (Lemon Tart Deconstructed)</h6>
+        </div>
+    </div>
+    <div class="box hide" data-content="5">
+        <img src="Pi.jpeg" alt="">
+        <div>
+            <h2>นโยบายของบริษัท</h2>
+            <p>ให้ทุกคนที่ทำงานเกี่ยวข้องกับช่องทางอินเตอร์เน็ตได้มาสนับสนุน Earth Sound Record ที่บริษัทของเราได้สร้างขึ้นทั้งเสียงธรรมชาติ เสียงที่มนุษย์สร้างขึ้น และเสียงต่างๆเพื่อนำไปใช้ประโยชน์ทางสื่อมัลติมีเดีย</p>
+        </div>
+    </div>
+
+</div>
+</body>
+<style>
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #212428;
+    overflow-x: clip;
+}
+
+ul {
+    list-style: none;
+}
+
+.tabs {
+    width: 80%;
+    height: 100px;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    align-items: center;
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    overflow: hidden;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.tabs li {
+    background-color: #212327;
+    width: 25%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #c4cfde;
+    font-family: 'Poppins', sans-serif;
+    transition: .5s;
+    -webkit-transition: .5s;
+    -moz-transition: .5s;
+    -ms-transition: .5s;
+    -o-transition: .5s;
+    cursor: pointer;
+}
+
+.tabs li:hover {
+    background: linear-gradient(145deg, #1e2024, #23272b);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    color: #f95300;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.active {
+    background: linear-gradient(145deg, #1e2024, #23272b);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    color: #f95300 !important;
+    position: relative;
+    z-index: 1;
+    border-radius: 10px;
+}
+
+.contents {
+    width: 80%;
+    margin: auto;
+    margin-top: 50px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.box {
+    gap: 20px;
+    background: linear-gradient(145deg, #1e2024, #23272b);
+    box-shadow: 10px 10px 19px #1c1e22, -10px -10px 19px #262a2e;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+    padding: 20px;
+    width: 100%;
+    animation: moving 1s ease;
+    -webkit-animation: moving 1s ease;
+}
+
+.box img {
+    width: 50%;
+    border-radius: 10px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    -o-border-radius: 10px;
+}
+
+.box h2 {
+    color: #fe7608;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+    margin-bottom: 20px;
+}
+
+.box p {
+    color: #ffffff;
+    opacity: .5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 2rem;
+}
+
+.box h6 {
+    color: #f9fffe;
+    opacity: .5;
+    font-family: 'Poppins', sans-serif;
+    font-size: 120%;
+}
+
+.show {
+    display: flex;
+}
+
+.hide {
+    display: none;
+}
+
+@keyframes moving {
+    from {
+        transform: translateX(-50px);
+        -webkit-transform: translateX(-50px);
+        -moz-transform: translateX(-50px);
+        -ms-transform: translateX(-50px);
+        -o-transform: translateX(-50px);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0px);
+        -webkit-transform: translateX(0px);
+        -moz-transform: translateX(0px);
+        -ms-transform: translateX(0px);
+        -o-transform: translateX(0px);
+        opacity: 1;
+    }
+}
+
+footer {
+            background-color: #000000;
+            color: #fff;
+            padding: 2px;
+            text-align: center;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        
+</style>
+
+<script>
+'use strict';
+const tabs = document.querySelectorAll('[data-id]');
+const contents = document.querySelectorAll('[data-content]');
+let id = 0;
+
+tabs.forEach(function (tab) {
+    tab.addEventListener('click', function () {
+        tabs[id].classList.remove('active');
+        tab.classList.add('active');
+        id = tab.getAttribute('data-id');
+        contents.forEach(function (box) {
+            box.classList.add('hide');
+            if (box.getAttribute('data-content') == id){
+                box.classList.remove('hide');
+                box.classList.add('show');
+            }
+        });
+    });
+});
+</script>
+
+<br></br>
+<br></br>
+
+
+
+
+
+<body>
+<article>
+    <h1>คำถามที่พบบ่อย</h1>
+    <br></br>
+    <h2>ประสิทธิภาพของเสียง</h2>
+    <p>- เราได้ทดสอบและปรับปรุงระบบเสียงอย่างสม่ำเสมอ และปรับปรุงตามความต้องการของผู้ใช้ โดยใช้ข้อมูลจากการใช้งานจริงเพื่อปรับปรุงประสิทธิภาพอย่างเหมาะสม</p>
+    <h2>มาตรการความปลอดภัยข้อมูลส่วนบุคคล</h2>
+    <p>- เพื่อให้ลูกค้ามีความมั่นใจว่าข้อมูลส่วนบุคคลถูกเก็บไว้อย่างปลอดภัย เรามีมาตรการความปลอดภัยที่เหมาะสมและเข้มงวดในการปกป้องข้อมูลของลูกค้าโดยใช้เทคโนโลยีการเข้ารหัสข้อมูล SSL (Secure Sockets Layer) เพื่อปกป้องข้อมูลที่ถูกส่งระหว่างเบราว์เซอร์ของลูกค้าและเซิร์ฟเวอร์ของเรา</p>
+    <h2>ปัญหาทางกฎหมาย</h2>
+    <p>- เราขอยืนยันว่าเรามุ่งมั่นในการปฏิบัติตามกฎหมายทุกประการ เราให้ความสำคัญกับการให้บริการดาวน์โหลดเสียงอย่างสูง โดยยึดตามกฎหมายที่เกี่ยวข้องเพื่อให้มั่นใจว่าการดาวน์โหลดเสียงของลูกค้าเป็นไปตามข้อกำหนดและข้อบังคับที่เกี่ยวข้อง และเราพร้อมที่จะตอบสนองตามข้อกำหนดและข้อบังคับเพื่อความปลอดภัยและความเชื่อถือของลูกค้าในการใช้บริการของเราอย่างต่อเนื่อง หากลูกค้ามีข้อสงสัยหรือข้อเสนอแนะเกี่ยวกับดาวน์โหลดเสียง โปรดติดต่อเราโดยตรงเพื่อขอข้อมูลเพิ่มเติมและการช่วยเหลือที่เกี่ยวข้อง</p><br><br></br>
+</article>
+
+<footer>
+   <center><p>&copy; 2024 Sound Effects Store. All rights reserved.</p></center>
+
+   
+</footer>
+</body>
+
+<style>
+
+:is(h1, h2) {
+  color: orangered;
+}
+
+:where(h1, h2) {
+  color: blue;
+}
+
+@layer base {
+  body {
+    display: grid;
+    font-family: "Rethink Sans", sans-serif;
+    font-size: 1.25rem;
+    line-height: 1.35;
+    padding: 1.5rem;
+    place-items: center;
+  }
+  
+  article {
+    width: min(100%, 50ch);
+  }
+  
+  :is(h1, h2) {
+    font-family: "Protest Strike", sans-serif;
+  }
+  
+  h1 {
+    font-size: 200%;
+  }
+  
+  p {
+    color: hsl(0deg 0% 100%);
+  }
+}
+</style>
+

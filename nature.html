@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="logo.JPG ">
+    <title>nature sound</title>
+    <style>
+        body{
+            display: block;
+           background-color: #000000;
+
+            
+        }
+
+        h1{
+            font-size: 20px;
+
+        }
+        /* CSS for navigation menu */
+        nav {
+            border-radius: 35px;
+            background-color: #333;
+            color: white;
+            width: 215px; /* กำหนดความกว้างของแถบด้านซ้าย */
+            height: 100%; /* ให้แถบเต็มสูงตามหน้าเว็บ */
+            position: fixed; /* ติดแถบเมนูไว้ด้านซ้าย */
+            top: 0; /* จัดแถบเมนูไว้ด้านบน */
+            left: 0; /* จัดแถบเมนูไว้ด้านซ้าย */
+            overflow-y: auto; /* ให้เลื่อนแถบเมนูได้กรณีเนื้อหาเยอะ */
+            border:3px solid #ffffff;
+            margin: 10px;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav li {
+            padding: 10px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav a:hover {
+            background-color: #040404;
+        }
+
+        /* CSS for main content */
+    
+         
+
+
+        .menu {
+        width: 200px; /* กำหนดความกว้างของแถบเมนู */
+        background-color: #424242;
+        padding: 10px;
+        text-align: center;
+       }
+
+        .menu ul {
+        list-style-type: none;
+        padding: 0;
+        margin: 0;
+        }
+
+        .menu li {
+        padding: 8px 0;
+        }
+
+        .menu li a {
+        text-decoration: none;
+        color: #ffffff;
+        border-radius: 35px;
+        display: block;
+        }
+
+        .menu li a:hover {
+        background-color: #cccccc;
+        color:#040404;
+        border-radius: 35px;
+        border-color:#ffffff;
+        box-shadow:0 0 17px rgba(255, 255, 255);
+        }
+        .collapsible {
+        background-color: #fdfdfd;
+        color: rgb(0, 0, 0);
+        cursor: pointer;
+        padding: 10px;
+        border: none;
+        text-align: center;
+        width: 100%;
+        border-radius: 35px;
+        outline: none;
+        border:1px solid #ffffff
+       
+         }
+
+        .active, .collapsible:hover {
+        background-color: #d6d6d6;
+        border-color:#000000;
+        box-shadow:0 0 14px rgb(195, 190, 190);
+        }
+
+    /* CSS for collapsible content */
+       .content {
+        padding: 0 10px;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.2s ease-out;
+        border-radius: 10px;
+
+        }
+
+        .rounded-bar {
+            width: 70%;
+            height: 40%;
+            color: #cccccc;
+            font-size:19px ;
+            background-color: #282727;
+            padding: 20px;
+            border-radius: 10px; /* กำหนดขอบมนให้กับแถบ */
+            margin-left: 235px;
+            border:5px solid #ffffff
+            
+            
+ 
+         
+
+        }
+
+        .menu-item {
+            margin-bottom: 10px;
+        }
+
+        .menu-item a {
+            text-decoration: none;
+            color: #333;
+            cursor:pointer;
+        }
+
+        .glow:hover {
+         border-color:#1ADEFF;
+         box-shadow:0 0 10px rgba(25,222,255,.5);
+        }
+
+        .image{
+            width:65px ;
+            height: 65px;
+            border-radius:40px ;
+            background-color: #d6d6d6;
+            background-image: url('audio.jpg');
+            background-size: cover;
+            background-position: center;
+        }
+        .detaill{
+            border:1px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+            width: 60%;
+            padding: 25px;
+            margin-left: 275px;
+            margin-bottom: 1%;
+            margin-top: 10px;
+            border-radius: 25px;
+            font-size: 24px;
+            
+            
+
+        }
+        .detaill2{
+           position: relative; 
+            border:1px solid #000000;
+            background-color: #ffffff;
+            color: #000000;
+            width: 255px;
+            height: 35px;
+            padding: 15px;
+            margin-left: 350px;
+            margin-right: 20px;
+            box-shadow: 5px 5px 10px rgba(245, 245, 245);
+            border-radius: 25px;
+            font-size: 15px;
+            
+           
+           display: inline-block;
+            
+        }
+
+        .box {
+             position: relative;
+              font-size: 15px;
+              width: 255px;
+              height: 25px;            
+              background-color: #ffffff;
+              color: #000000;  
+              border: 1px solid #999;
+              border-radius: 25px;
+              box-shadow: 4px 4px 5px rgba(245, 245, 245);
+              padding: 10px;
+              margin-right: 20px; /* เพิ่มระยะห่างระหว่างกล่องข้อความ */ 
+             display: inline-block;
+        }
+
+
+
+        .image2{
+            width:30px ;
+            height: 30px;
+            border-radius:35px ;
+            background-color: #d6d6d6;
+            background-image:url('play.png') ;
+            background-size: cover;
+            background-position: center;
+            
+            border:1px solid #000000;
+            display: inline-block;
+            padding: 10px 20px;
+    
+            color: #fff;
+            cursor: pointer;
+          
+            transition:all 0.3s ease, box-shadow 0.3s ease;
+            box-shadow: 4px 4px 4px  rgb(115, 187, 255);
+        
+        }
+        .image2:hover {
+          background-color: #5cbbff;
+          box-shadow: 2px 2px 2px rgba(255, 249, 249);
+        }
+
+        .image2:focus {
+         outline: none;
+         box-shadow: 0 0 0 3px rgba(0, 149, 255, 0.5); /* Adjust the color and size of the glow */
+
+        }
+       .bar {
+         background: #28bcfb;
+         bottom: 1px;
+         height: 3px;
+         position: absolute;
+         width: 40px;
+         animation: baranimation -800ms linear infinite alternate;
+         }
+         @keyframes baranimation {
+         0% {
+          opacity: .5;
+          height: 3px
+           }
+  
+        100% {
+         opacity: 1;
+         height: 90px;
+          }
+          }
+
+         .bar:nth-child(1) { left: 1px; animation-duration:350ms;}
+         .bar:nth-child(2) { left: 31px; animation-duration:450ms;}
+         .bar:nth-child(3) { left: 61px; animation-duration:480ms;}
+         .bar:nth-child(4) { left: 91px; animation-duration:400ms;}
+         .bar:nth-child(5) { left: 121px; animation-duration:520ms;}
+         .bar:nth-child(6) { left: 151px; animation-duration:410ms;}
+         .bar:nth-child(7) { left: 181px; animation-duration:395ms;}
+         .bar:nth-child(8) { left: 211px; animation-duration:390ms;}
+         .bar:nth-child(9) { left: 241px; animation-duration:545ms;}
+         .bar:nth-child(10) { left:271px; animation-duration:450ms;}
+         .bar:nth-child(11) { left: 301px; animation-duration:322ms;}
+         .bar:nth-child(12) { left: 331px; animation-duration:411ms;}
+         .bar:nth-child(13) { left: 361px; animation-duration:488ms;}
+         .bar:nth-child(14) { left: 391px; animation-duration:399ms;}
+         .bar:nth-child(15) { left: 421px; animation-duration:528ms;}
+         .bar:nth-child(16) { left: 451px; animation-duration:419ms;}
+         .bar:nth-child(17) { left: 481px; animation-duration:333ms;}
+         .bar:nth-child(18) { left: 511px; animation-duration:311ms;}
+         .bar:nth-child(19) { left: 541px; animation-duration:525ms;}
+
+
+         
+    </style>
+</head>
+<body>
+
+    <!-- Navigation menu -->
+    <nav>
+        <div class="menu">
+            <button class="collapsible" onclick="toggleMenu()">หมวดหมู่</button>
+         <div class="content" id="menuContent">
+            
+        <ul>
+            <li><a href="Game.html">เกม</a></li>
+            <li><a href="nature.html">ธรรมชาติ</a></li>
+            <li><a href="effect.html">เอฟเฟกต์</a></li>
+            <li><a href="cartoon.html">การ์ตูนและภาพยนตร์</a></li>
+            <li><a href="engine.html">เครื่องจักร</a></li>
+            <li><a href="meme.html">มีม</a></li>
+            <li><a href="classic.html">คลาสสิก</a></li>
+            <li><a href="dance.html">แดนซ์และอิเล็กโทรนิกซ์</a></li>
+
+         </ul>
+         </div>
+         <br>
+         <button class="collapsible" onclick="window.location.href='index1.html'">กลับไปหน้าหลัก</button>
+         <div id="bars">
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+            <div class="bar"></div>
+        
+        
+        
+        
+        </div> 
+    </nav>
+
+
+    
+
+
+
+
+    <div class="rounded-bar"  >
+     <div class="image" ><a href="gg" > </a> </div>   
+  
+     <h1>1-Minute Nature Background Sound</h1>
+     <div class="box">ประเภท : ธรรมชาติ</div>
+     
+     <div class="box">เวลา: 1:01 min</div>
+     
+     <hr><div class="image2"  onclick="window.location.href='1-Minute Nature Background Sound.html'"  ></div>
+
+             
+   </div><br>
+    <div class="rounded-bar">
+       <div class="image"><a href="#"></a>    </div>    
+       
+     <h1>spring rain</h1>
+     <div class="box">ประเภท : ธรรมชาติ</div>
+     
+     <div class="box">เวลา : 0:58 min</div>
+     
+     <hr><div class="image2"  onclick="window.location.href='spring rain.html'"  ></div>
+
+             
+   </div><br>
+
+  <div class="rounded-bar">
+    <div class="image" ><a href="gg" > </a> </div>
+     <h1>SIMA</h1>
+     <div class="box">ประเภท : ธรรมชาติ</div>
+     
+     <div class="box">เวลา : 1:12 min</div>
+     
+     <hr><div class="image2" onclick="window.location.href='SIMA.html'"  ></div>
+
+             
+   </div><br>
+
+
+
+
+
+
+
+    <!-- สคริปจาวา ------------------------------------------------------------------------>
+    <script>
+        function toggleMenu() {
+            var content = document.getElementById("menuContent");
+            if (content.style.maxHeight) {
+                content.style.maxHeight = null;
+            } else {
+                content.style.maxHeight = content.scrollHeight + "px";
+            }
+        }
+
+
+        function goToLink() {
+         
+         window.location.href = 'index.html';
+}
+    </script>    
+</body>
+</html>

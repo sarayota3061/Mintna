@@ -1,0 +1,21 @@
+@keyframes wave {
+    0% {
+      transform: translateY(0) rotate(0deg);
+    }
+    50% {
+      transform: translateY(-25px) rotate(45deg);
+    }
+    100% {
+      transform: translateY(0) rotate(0deg);
+    }
+  }
+  
+  .moving-wave {
+    width: 150px;
+    height: 150px;
+    background: linear-gradient(135deg, #ff4e50, #f9d423, #1abc9c, #2ecc71);
+    border-radius: 50%;
+    position: relative;
+    animation: wave 2s ease-in-out infinite;
+  }
+  
